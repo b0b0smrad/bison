@@ -1,0 +1,70 @@
+#!/bin/env bash
+ansi_logo='
+▀█████████▄   ▄█     ▄████████  ▄██████▄  ███▄▄▄▄
+  ███    ███ ███    ███    ███ ███    ███ ███▀▀▀██▄
+  ███    ███ ███▌   ███    █▀  ███    ███ ███   ███
+ ▄███▄▄▄██▀  ███▌   ███        ███    ███ ███   ███
+▀▀███▀▀▀██▄  ███▌ ▀███████████ ███    ███ ███   ███
+  ███    ██▄ ███           ███ ███    ███ ███   ███
+  ███    ███ ███     ▄█    ███ ███    ███ ███   ███
+▄█████████▀  █▀    ▄████████▀   ▀██████▀   ▀█   █▀'
+
+ansi_logo1='
+▀█████████▄   ▄█     ▄████████  ▄██████▄  ███▄▄▄▄
+
+  ███    ███ ███▌   ███    █▀  ███    ███ ███   ███
+  
+▀▀███▀▀▀██▄  ███▌ ▀███████████ ███    ███ ███   ███
+  ███    ██▄ ███           ███ ███    ███ ███   ███
+
+▄█████████▀  █▀    ▄████████▀   ▀██████▀   ▀█   █▀'
+
+ansi_logo2='
+▀█████████▄   ▄█     ▄████████  ▄██████▄  ███▄▄▄▄
+  ███    ███    ███    ███ ███    ███ ███▀▀▀██▄
+  ███    ███ ███▌   ███    █▀  ███    ███ ███   ███
+ ▄███▄▄▄██▀  ███▌   ███        ███    ███ ███   ███
+▀▀███▀▀▀████▌ ▀███████████ ███    ███ ███   ███
+  ███    ██▄ ███           ███ ███    ███ ███   ███
+    ███    ███ ███     ▄█    ███ ███    ███ ███   ███
+▄█████████▀  █▀    ▄████████▀   ▀██████▀   ▀█   █▀'
+
+
+clear
+echo -e "\n$ansi_logo2\n"
+sleep 0.6 
+clear
+echo -e "\n$ansi_logo\n"
+sleep 0.6 
+clear
+echo -e "\n$ansi_logo1\n"
+clear
+echo -e "\n$ansi_logo2\n"
+sleep 0.6 
+clear
+echo -e "\n$ansi_logo1\n"
+sleep 0.6
+clear
+echo -e "\n$ansi_logo\n"
+
+# if command -v tte &>/dev/null; then
+#   while true; do
+#     effect=$(tte 2>&1 | grep -oP '{\K[^}]+' | tr ',' ' ' | tr ' ' '\n' | sed -n '/^beams$/,$p' | sort -u | shuf -n1)
+#     tte -i ./logo.txt \
+#       --frame-rate 240 --canvas-width 0 --canvas-height 10 --anchor-canvas c --anchor-text c \
+#       "$effect" &
+#
+#     while pgrep tte >/dev/null; do
+#       if read -n 1 -t 0.01; then
+#         pkill tte 2>/dev/null
+#         pkill -f "alacritty --class Screensaver" 2>/dev/null
+#         exit 0
+#       fi
+#     done
+#   done
+# else
+#   gum spin --title "Can't find tte. Try: pip install terminaltexteffects" -- sleep 2
+#   pipx install terminaltexteffects
+# fi
+
+
