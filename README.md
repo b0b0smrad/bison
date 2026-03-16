@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## BISON
 
 A script helper for your favorite distro (currently supporting Arch only -- might do Debian and Fedora in future)
@@ -36,3 +37,8 @@ Install Arch via your favority repo or package manager, paste one liner and boom
 
 
 
+=======
+# bison
+
+very bare scripts-distro to get you started with dwm and arch(for now)
+>>>>>>> origin/main
