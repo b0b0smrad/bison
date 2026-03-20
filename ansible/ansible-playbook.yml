@@ -1,0 +1,23 @@
+---
+- name: arch-post-install-setup
+  hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install base and important packages
+      pacman:
+        name:
+          - base
+          - base-devel
+  tasks:
+    - name: install packages
+      pacman:
+        name:
+          - vim
+          - neovim
+          - git
+          - tmux
+        state: present
+
+
