@@ -4,20 +4,177 @@
   connection: local
   become: true
 
-  tasks:
-    - name: install base and important packages
-      pacman:
-        name:
-          - base
-          - base-devel
+  # tasks:
+  #   - name: install base and important packages
+  #     pacman:
+  #       name:
+  #         - base
+  #         - base-devel
   tasks:
     - name: install packages
       pacman:
         name:
-          - vim
-          - neovim
+          - 7zip
+          - alacritty
+          - alsa-utils
+          - amd-ucode
+          - amdgpu_top
+          - ansible
+          - ansible-core
+          - ansible-language-server
+          - ansible-lint
+          - arandr
+          - archinstall
+          - aseprite
+          - base
+          - base-devel
+          - bat
+          - bitwarden
+          - btop
+          - cable
+          - calibre
+          - chromium
+          - clipmenu
+          - clipnotify
+          - cpupower
+          - cups
+          - discord
+          - dosbox
+          - dotnet-runtime-8.0
+          - dunst
+          - dust
+          - easyeffects
+          - efibootmgr
+          - fastfetch
+          - fbreader
+          - feh
+          - fio
+          - firefox
+          - flameshot
+          - flatpak
+          - fzf
+          - gconf
+          - gdb
           - git
+          - git-lfs
+          - go
+          - grub
+          - gvfs
+          - gvfs-smb
+          - heroic-games-launcher
+          - hip-runtime-amd
+          - htop
+          - i3-wm
+          - i3blocks
+          - i3lock
+          - i3status
+          - iftop
+          - iwd
+          - iwgtk
+          - jellyfin-web
+          - jre21-openjdk
+          - krita
+          - less
+          - lib32-vulkan-radeon
+          - libc++
+          - libxinerama
+          - lightdm
+          - linux-firmware
+          - linux-zen
+          - linux-zen-headers
+          - lsp-plugins
+          - lxinput
+          - man-db
+          - mpv
+          - neovim
+          - npm
+          - ntfs-3g
+          - nvidia-dkms
+          - nvidia-settings
+          - nvtop
+          - obsidian
+          - optimus-manager-git
+          - optimus-manager-qt
+          - os-prober
+          - pavucontrol
+          - pcsclite
+          - picom
+          - pipewire
+          - pipewire-audio
+          - pipewire-docs
+          - pipewire-jack
+          - pipewire-pulse
+          - pipewire-zeroconf
+          - pureref
+          - qbittorrent
+          - radeontool
+          - radeontop
+          - reaper
+          - renderdoc
+          - ripgrep
+          - rocm-opencl-runtime
+          - rocm-smi-lib
+          - rofi
+          - rsync
+          - sane
+          - sddm
+          - smartmontools
+          - smb4k
+          - smbnetfs
+          - steam
+          - sudo
+          - sws
+          - sxiv
+          - syncthing
+          - systemd-resolvconf
+          - tailscale
+          - termdown
+          - thunar
+          - thunar-archive-plugin
+          - thunar-media-tags-plugin
+          - thunar-shares-plugin
+          - thunar-volman
+          - thunderbird
           - tmux
+          - ttf-nerd-fonts-symbols
+          - ttf-nerd-fonts-symbols-common
+          - unrar
+          - unzip
+          - upower
+          - vesktop-bin
+          - vim
+          - virtualbox
+          - vulkan-radeon
+          - wget
+          - wine
+          - wine-gecko
+          - wine-mono
+          - wiremix
+          - wireplumber
+          - wireplumber-docs
+          - wsdd
+          - xclip
+          - xdg-desktop-portal
+          - xdg-desktop-portal-gtk
+          - xdg-desktop-portal-wlr
+          - xf86-input-wacom
+          - xf86-video-amdgpu
+          - xorg-server
+          - xorg-xev
+          - xorg-xinit
+          - xorg-xinput
+          - xorg-xprop
+          - xorg-xrandr
+          - xorg-xsetroot
+          - xorg-xwayland
+          - xterm
+          - yay-bin
+          - zathura
+          - zathura-pdf-poppler
+          - zathura-ps
+          - zig
+          - zip
+          - zsh
         state: present
 
 
