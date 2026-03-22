@@ -173,12 +173,13 @@
     - name: Enable pipewire (user)
       become: false
       ansible.builtin.systemd:
-        name: 
-          - pipewire
-          - wireplumber
+        name: "{{ item }}"
         scope: user
         enabled: true
         state: started
+      loop:
+        - pipewire
+        - wireplumber
 
     - name: Git pull DWM
       become: false
