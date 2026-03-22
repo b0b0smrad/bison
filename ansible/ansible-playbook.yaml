@@ -1,5 +1,5 @@
 ---
-- name: arch-post-install-setup
+- name: Arch-post-install-setup
   hosts: localhost
   connection: local
   become: true
@@ -14,8 +14,8 @@
   #         - base
   #         - base-devel
   tasks:
-    - name: install packages
-      pacman:
+    - name: Install packages
+      community.general.pacman:
         name:
           - 7zip
           - alacritty
@@ -170,29 +170,29 @@
           - zsh
         state: present
 
-    - name: enable pipewire (user)
+    - name: Enable pipewire (user)
       become: false
-      systemd:
+      ansible.builtin.systemd:
         name: pipewire
         scope: user
         enabled: true
-    - name:
+
+    - name: Git pull DWM
       become: false
-      git:
+      ansible.builtin.git:
         repo: https://github.com/b0b0smrad/DWM.git
         dest: "/home/{{ user }}/.config/dwm"
+        update: yes
 
-    - name: build dwm
+    - name: Build dwm
       become: false
-      shell: bash auto_restart.sh
+      command:
+        bash auto_restart.sh
       args:
         chdir: "/home/{{ user }}/src/dwm"
-        # creates: "/usr/local/bin/dwm"
-    #
-    - name: install oh-my-zsh
+        creates: "/usr/local/bin/dwm"
+
+    - name: Install oh-my-zsh
       become: false
-      shell: |
+      ansible.builtin.shell: |
         sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended
-
-      
-
