@@ -5,6 +5,7 @@
   become: true
 
   # tasks:
+  #
   #   - name: install base and important packages
   #     pacman:
   #       name:
@@ -82,6 +83,7 @@
           - linux-firmware
           - linux-zen
           - linux-zen-headers
+          - luarocks
           - lsp-plugins
           - lxinput
           - man-db
@@ -128,6 +130,7 @@
           - syncthing
           - systemd-resolvconf
           - tailscale
+          - tree-sitter
           - termdown
           - thunar
           - thunar-archive-plugin
@@ -177,4 +180,29 @@
           - zsh
         state: present
 
+    - name: enable pipewire (user)
+      become: false
+      systemd:
+        name: pipewire
+        scope: user
+        enabled: true
+    - name:
+      become: false
+      git:
+        repo: git@github.com:b0b0smrad/dwm
+        dest: "/home/{{ user }}/.config/dwm"
+
+    - name: build dwm
+      become: false
+      shell: bash auto_restart.sh
+      args:
+        chdir: "/home/{{ user }}/src/dwm"
+        # creates: "/usr/local/bin/dwm"
+    #
+    - name: install oh-my-zsh
+      become: false
+      shell: |
+        sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended
+
+      
 
