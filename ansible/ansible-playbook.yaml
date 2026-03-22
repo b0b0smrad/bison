@@ -232,7 +232,8 @@
         creates: "/home/{{ user }}/.oh-my-zsh"
 
     - name: Enable sddm (lasts)
-      become: false
+      become: true
       ansible.builtin.systemd:
         name: sddm
         enabled: true
+        state: started
