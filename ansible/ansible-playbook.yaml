@@ -4,6 +4,8 @@
   connection: local
   become: true
 
+  vars:
+    user: "{{ ansible_user_id }}"
   # tasks:
   #
   #   - name: install base and important packages
