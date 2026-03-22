@@ -33,7 +33,6 @@
           - bat
           - bitwarden
           - btop
-          - cable
           - calibre
           - chromium
           - clipmenu
@@ -55,7 +54,6 @@
           - flameshot
           - flatpak
           - fzf
-          - gconf
           - gdb
           - git
           - git-lfs
@@ -63,7 +61,6 @@
           - grub
           - gvfs
           - gvfs-smb
-          - heroic-games-launcher
           - hip-runtime-amd
           - htop
           - i3-wm
@@ -72,7 +69,6 @@
           - i3status
           - iftop
           - iwd
-          - iwgtk
           - jellyfin-web
           - jre21-openjdk
           - krita
@@ -92,12 +88,8 @@
           - neovim
           - npm
           - ntfs-3g
-          - nvidia-dkms
-          - nvidia-settings
           - nvtop
           - obsidian
-          - optimus-manager-git
-          - optimus-manager-qt
           - os-prober
           - pavucontrol
           - pcsclite
@@ -108,7 +100,6 @@
           - pipewire-jack
           - pipewire-pulse
           - pipewire-zeroconf
-          - pureref
           - qbittorrent
           - radeontool
           - radeontop
@@ -145,7 +136,6 @@
           - unrar
           - unzip
           - upower
-          - vesktop-bin
           - vim
           - virtualbox
           - vulkan-radeon
@@ -172,7 +162,6 @@
           - xorg-xsetroot
           - xorg-xwayland
           - xterm
-          - yay-bin
           - zathura
           - zathura-pdf-poppler
           - zathura-ps
