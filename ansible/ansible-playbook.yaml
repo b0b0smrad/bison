@@ -186,29 +186,31 @@
       ansible.builtin.git:
         repo: https://github.com/b0b0smrad/DWM.git
         dest: "/home/{{ user }}/.config/dwm"
-        update: yes
+        update: true
 
     - name: Git pull config
       become: false
       ansible.builtin.git:
         repo: https://github.com/b0b0smrad/dotfiles.git
         dest: "/home/{{ user }}/dotfiles"
-        update: yes
+        update: true
 
-    - name:  Copy .config dotfiles
+    - name: Copy .config dotfiles
       become: false
-      copy:
+      ansible.builtin.copy:
         src: "/home/{{ user }}/dotfiles/user_configs"
         dest: /home/{{ user }}/.config
+        mode: '0644'
 
     - name: Copy home dotfiles
       become: false
-      copy:
+      ansible.builtin.copy:
         src: "/home/{{ user }}/dotfiles/home_src"
         dest: /home/{{ user }}/
+        mode: '0644'
 
     - name: Enable services
-      become: false
+      become: true
       ansible.builtin.systemd:
         name: sshd
         state: started
@@ -216,7 +218,7 @@
 
     - name: Build dwm
       become: false
-      command:
+      ansible.builtin.command:
         bash auto_restart.sh
       args:
         chdir: "/home/{{ user }}/.config/dwm"
@@ -226,6 +228,8 @@
       become: false
       ansible.builtin.shell: |
         sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended
+      args:
+        creates: "/home/{{ user }}/.oh-my-zsh"
 
     - name: Enable sddm (lasts)
       become: false
