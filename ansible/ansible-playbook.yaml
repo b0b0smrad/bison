@@ -179,7 +179,7 @@
     - name:
       become: false
       git:
-        repo: git@github.com:b0b0smrad/dwm
+        repo: https://github.com/b0b0smrad/DWM.git
         dest: "/home/{{ user }}/.config/dwm"
 
     - name: build dwm
