@@ -5,7 +5,7 @@
   become: true
 
   vars:
-    user: "{{ ansible_user_id }}"
+    user: "{{ lookup('env', 'USER') }}"
   # tasks:
   #
   #   - name: install base and important packages
@@ -189,7 +189,7 @@
       command:
         bash auto_restart.sh
       args:
-        chdir: "/home/{{ user }}/src/dwm"
+        chdir: "/home/{{ user }}/.config/dwm"
         creates: "/usr/local/bin/dwm"
 
     - name: Install oh-my-zsh
