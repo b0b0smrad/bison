@@ -28,7 +28,6 @@
           - ansible-lint
           - arandr
           - archinstall
-          - aseprite
           - base
           - base-devel
           - bat
