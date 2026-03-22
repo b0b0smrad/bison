@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=dwm
+Comment=suckless is not less but more with less code
+Exec=/usr/local/bin/dwm
+TryExec=dwm
+Type=XSession
+Keywords=tiling;wm;windowmanager;window;manager;

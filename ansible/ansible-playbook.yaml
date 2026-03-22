@@ -173,9 +173,12 @@
     - name: Enable pipewire (user)
       become: false
       ansible.builtin.systemd:
-        name: pipewire
+        name: 
+          - pipewire
+          - wireplumber
         scope: user
         enabled: true
+        state: started
 
     - name: Git pull DWM
       become: false
@@ -183,6 +186,32 @@
         repo: https://github.com/b0b0smrad/DWM.git
         dest: "/home/{{ user }}/.config/dwm"
         update: yes
+
+    - name: Git pull config
+      become: false
+      ansible.builtin.git:
+        repo: https://github.com/b0b0smrad/dotfiles.git
+        dest: "/home/{{ user }}/dotfiles"
+        update: yes
+
+    - name:  Copy .config dotfiles
+      become: false
+      copy:
+        src: "/home/{{ user }}/dotfiles/user_configs"
+        dest: /home/{{ user }}/.config
+
+    - name: Copy home dotfiles
+      become: false
+      copy:
+        src: "/home/{{ user }}/dotfiles/home_src"
+        dest: /home/{{ user }}/
+
+    - name: Enable services
+      become: false
+      ansible.builtin.systemd:
+        name: sshd
+        state: started
+        enabled: true
 
     - name: Build dwm
       become: false
@@ -196,3 +225,9 @@
       become: false
       ansible.builtin.shell: |
         sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended
+
+    - name: Enable sddm (lasts)
+      become: false
+      ansible.builtin.systemd:
+        name: sddm
+        enabled: true
