@@ -1,0 +1,6 @@
+#!/bin/zsh
+chromium --app=https://chatgpt.com/ \
+  --disable-features=ExtensionsToolbarMenu \
+  --disable-translate \
+  --disable-sync \
+  --profile-directory="DiscordApp"

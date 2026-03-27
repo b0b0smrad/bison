@@ -1,0 +1,7 @@
+
+#!/bin/bash
+
+number=$(xinput list | grep "Logitech G102 LIGHTSYNC Gaming Mouse  " | awk '{split($8, a, "="); print a[2]}' | tr -d '\n')
+
+xinput set-prop "$number" "libinput Accel Profile Enabled" 0, 1
+

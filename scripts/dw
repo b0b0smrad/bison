@@ -1,0 +1,8 @@
+#!/bin/env bash
+#
+
+
+alacritty -e zsh -c 'cd $HOME/.config/dwm && nvim config.def.h && ./auto_restart.sh'
+
+# cd "$HOME/.config/dwm"
+# nvim "config.def.h"
